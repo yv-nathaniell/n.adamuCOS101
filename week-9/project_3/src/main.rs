@@ -10,7 +10,9 @@ fn main() {
         let line= format!("{},{},{}", commissioners[i], ministries[i], zones[i]);
         combo.push(line);
     }
+    //creation of the convicts files
     let mut file= std::fs::File::create("convicministers.csv").expect("create failed");
+    //field rows
     let fields="Commissioner,Ministry,Zone";
     println!("\n{}", fields);
     file.write_all(fields.as_bytes()).expect("write failed");
